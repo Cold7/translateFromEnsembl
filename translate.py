@@ -17,7 +17,7 @@ if __name__ == "__main__":
 	print("\n\n######################################")
 	print("##                                  ##")
 	print("##          trasformEnsembl         ##")
-	print("##            version 1.0           ##")
+	print("##            version 2.0           ##")
 	print("##      Data taken from Ensembl     ##")
 	print("##        for Human and Mouse       ##")
 	print("##            (GRCh38/mm10)         ##")
@@ -71,11 +71,16 @@ if __name__ == "__main__":
 	file = open(args.output_file,"w")
 	for line in List:
 		if line != "\n":
-			gene = line[:-1]
+			gene = line[:-1].split("\t")[0]
+			count = 0
+			try:
+				count = line[:-1].split("\t")[1]
+			except:
+				pass
 			flag = False
 			for d in data:
 				if d[0] == gene:
-					file.write(d[1]+"\n")
+					file.write(d[1]+"\t"+count+"\n")
 					flag = True
 			if flag == False:
 				notSyn.append(gene)
