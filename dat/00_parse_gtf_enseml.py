@@ -1,5 +1,5 @@
 #19	havana	transcript	3283055	3289179	.	+	.	gene_id "ENSMUSG00000024829"; gene_version "12"; transcript_id "ENSMUST00000139844"; transcript_version "7"; gene_name "Mrpl21"; gene_source "ensembl_havana"; gene_biotype "protein_coding"; transcript_name "Mrpl21-203"; transcript_source "havana"; transcript_biotype "retained_intron"; transcript_support_level "1";
-f = open("Homo_sapiens.GRCh38.97.gtf","r")
+f = open("Mus_musculus.GRCm38.102.gtf","r")
 sal = open("temp","w")
 for line in f:
 	if "gene_id" in line and "transcript_id" in line and "gene_name" in line:
