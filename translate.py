@@ -14,19 +14,21 @@ def done():
 if __name__ == "__main__":
 
 
-	print("\n\n######################################")
-	print("##                                  ##")
-	print("##          trasformEnsembl         ##")
-	print("##            version 2.0           ##")
-	print("##      Data taken from Ensembl     ##")
-	print("##        for Human and Mouse       ##")
-	print("##            (GRCh38/mm10)         ##")
-	print("##                                  ##")
-	print("##             Created by           ##")
-	print("##   Sebastian Contreras-Riquelme   ##")
-	print("##   Search me on github as Cold7   ##")
-	print("##                                  ##")
-	print("######################################\n\n")
+	print("\n\n#############################################")
+	print("##                                         ##")
+	print("##            trasformEnsembl              ##")
+	print("##              version 3.0                ##")
+	print("##        Data taken from Ensembl          ##")
+	print("##          for Human and Mouse            ##")
+	print("##              (GRCh38/mm10)              ##")
+	print("##                                         ##")
+	print("##               Created by                ##")
+	print("##     Sebastian Contreras-Riquelme        ##")
+	print("##     Search me on github as Cold7        ##")
+	print("##        Question or suggestions          ##")
+	print("##               write me                  ##")
+	print("##  contrerasriquelme.sebastian@gmail.com  ##")
+	print("#############################################\n\n")
 	
 	#checking python version
 	if (sys.version_info < (3, 0)):
@@ -72,15 +74,10 @@ if __name__ == "__main__":
 	for line in List:
 		if line != "\n":
 			gene = line[:-1].split("\t")[0]
-			count = 0
-			try:
-				count = line[:-1].split("\t")[1]
-			except:
-				pass
 			flag = False
 			for d in data:
 				if d[0] == gene:
-					file.write(d[1]+"\t"+count+"\n")
+					file.write(d[1]+"\t"+gene+"\n")
 					flag = True
 			if flag == False:
 				notSyn.append(gene)
