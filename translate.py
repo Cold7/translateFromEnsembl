@@ -1,6 +1,7 @@
 #importing libraries
 
 import sys 
+import os
 import argparse
 import time
 
@@ -59,7 +60,8 @@ if __name__ == "__main__":
 		done()
 
 	#selecting file to use
-	fileToOpen = "./dat/"+args.organism+"_"+args.input_data+"_"+args.output_data
+	currentFolder = os.getcwdb().decode('utf8')+"/translateFromEnsembl"
+	fileToOpen = currentFolder+"/dat/"+args.organism+"_"+args.input_data+"_"+args.output_data
 	data = []
 	file = open(fileToOpen,"r")
 	for line in file:
